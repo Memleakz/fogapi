@@ -1,0 +1,21 @@
+{
+    "name": "tobias/gql",
+    "authors": [
+        {
+            "name": "tobias",
+            "email": "tobsf@hotmail.com"
+        }
+    ],
+    "require": {
+        "webonyx/graphql-php": "^0.13.6",
+        "psr/http-message": "^1.0",
+        "alcaeus/mongo-php-adapter": "^1.1",
+        "doctrine/mongodb-odm": "^1.2",
+        "symfony/symfony": "^4.3"
+    },
+    "config": {
+        "platform": {
+            "ext-mongo": "1.6.16"
+        }
+    }
+}
