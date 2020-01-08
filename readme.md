@@ -1,14 +1,14 @@
-#Folketinges open data graphql api.
+# Folketinges open data graphql api.
 
 ## Opsætning
 Brug opstarts script sådan her:
 
-###scrape data og importer
+### scrape data og importer
  Brug scriptet til at hente json data og derefter importer sådan her:
  
-##start server
+## start server
 
 ## Query Data
 
-##DEMO
+## DEMO
 
