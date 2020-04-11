@@ -7,7 +7,6 @@ use GraphQL\Type\Definition\Type;
 
 use App\Types;
 use App\Data\DataSource;
-
 class QueryType extends ObjectType
 { 
     public function __construct()
@@ -82,7 +81,7 @@ class QueryType extends ObjectType
     {
         
         $db = new DataSource; 
-        return $db->GetAfstemningss($args);
+        return $db->GetAfstemnings($args);
     }
     
 }
