@@ -14,8 +14,15 @@ $client = new folketing_client();
 $json = file_get_contents("model.json");
 $model = json_decode($json);
 
+
 $json = file_get_contents("done_model.json");
 $done_model = json_decode($json);
+
+$json = file_get_contents("status.json");
+// get settings and stuff like last complete run for the objects.
+//the last update time for the models are needed to optimize querying.
+$settings = json_decode($json); 
+
 $target_db ="folketing";
 
 foreach($model as $id)
@@ -48,10 +55,19 @@ if(sizeof($model) == sizeof($done_model))
 function updateDoneModels($id)
 {
     global $done_model;
+    global $settings;
+
+    $settings->modelUpdates[$id] == time();
     array_push($done_model,$id);
+    
     $fp = fopen('done_model.json', 'w+');
     fwrite($fp, json_encode($done_model));
     fclose($fp);
+
+    $fp = fopen('status.json', 'w+');
+    fwrite($fp, json_encode($settings));
+    fclose($fp);
+
     return true;
 }
 function importModelOnComplete()
